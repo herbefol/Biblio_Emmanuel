@@ -3,18 +3,31 @@
  */
 package biblio.metier.personnes;
 
+import java.util.ArrayList;
+import java.util.Date;
+
+import biblio.metier.ouvrages.EmpruntEnCours;
+
 /**
  * @author Ak.vin / ManuL
  *
  */
-public class Utilisateur 
+public class Utilisateur extends Personne 
 {
 
 	private int idUtilisateur;
 	private String pwd;
 	private String pseudonyme;
+	private ArrayList<EmpruntEnCours> empruntEnCours;
 	
-	public Utilisateur(int idUtilisateur, String pwd, String pseudonyme) 
+	public Utilisateur(String nom, String prenom, Date dateNaissance, String sexe, int idUtilisateur, String pwd, String pseudonyme) {
+		super(nom,prenom,dateNaissance,sexe);
+		this.idUtilisateur = idUtilisateur;
+		this.pwd = pwd;
+		this.pseudonyme = pseudonyme;
+	}
+	
+/*	public Utilisateur(int idUtilisateur, String pwd, String pseudonyme) 
 	{
 		this.idUtilisateur = idUtilisateur;
 		this.pwd = pwd;
@@ -34,7 +47,7 @@ public class Utilisateur
 	public Utilisateur()
 	{
 			}
-	
+*/	
 	/**
 	 * @return l'ID de l'
 	 * Utilisateur
@@ -85,6 +98,14 @@ public class Utilisateur
 	}
 
 	
+	public ArrayList<EmpruntEnCours> getEmpruntEnCours() {
+		return empruntEnCours;
+	}
+
+	public void setEmpruntEnCours(ArrayList<EmpruntEnCours> empruntEnCours) {
+		this.empruntEnCours = empruntEnCours;
+	}
+
 	@Override
 	public String toString() 
 	{
@@ -93,9 +114,13 @@ public class Utilisateur
 								  + ", pseudonyme=" + pseudonyme + "]";
 	}
 
-	public static void main(String[] args) 
-	{
-
+	public int getNbEmpruntEnCours() {
+		return empruntEnCours.size();
 	}
+
+	public boolean isConditionsPretAcceptees(){
+		return true;
+	}
+	
 
 }
