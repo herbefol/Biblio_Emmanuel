@@ -48,5 +48,44 @@ public class Personne {
 		this.sexe = sexe;
 	}
 	
+	@Override
+	public String toString() {
+		return "Personne [nom:"+ this.nom + ":prénom:" + this.prenom + ":date de naissance:" + this.dateNaissance + "]"; 
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		if (o==this)
+			return true;
+		if (o instanceof Personne) {
+			Personne p = (Personne) o;
+			if (!this.nom.equals(p.nom)) {
+				return false;
+			}
+			if (!this.prenom.equals(p.prenom)) {
+				return false;
+			}
+			if(this.dateNaissance!=p.dateNaissance) {
+				if(!this.dateNaissance.equals(p.dateNaissance)) {
+					return false;
+				}
+			}
+			if (!this.sexe.equals(p.sexe)) {
+				return false;
+			}
+			return true;
+		}
+		return false;
+	}
+	
+	@Override
+	public int hashCode() {
+		int hash = 1;
+		hash = hash * 3 + this.nom.hashCode();
+		hash = hash * 5 + this.prenom.hashCode();
+		hash = hash * 7 + this.dateNaissance.hashCode();
+		hash = hash * 11 + this.sexe.hashCode();
+		return hash;
+	}
 
 }

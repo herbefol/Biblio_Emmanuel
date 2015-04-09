@@ -109,11 +109,31 @@ public class Utilisateur extends Personne
 	@Override
 	public String toString() 
 	{
-		return "Utilisateur [idUtilisateur :" 		+ idUtilisateur 
-								  + ", pwd=" 		+ pwd
-								  + ", pseudonyme=" + pseudonyme + "]";
+		return "Utilisateur [nom :" + this.getNom() + ":prénom:" + this.getPrenom()
+				+ ":idUtilisateur:" + this.idUtilisateur + ":pseudonyme:" + this.pseudonyme + "]";
 	}
-
+	
+	@Override
+	public boolean equals(Object o){
+		if (o==this)
+			return true;
+		if (o instanceof Utilisateur) {
+			Utilisateur u = (Utilisateur) o;
+			if (!this.getNom().equals(u.getNom())) {
+				return false;
+			}
+			if (!this.getPrenom().equals(u.getPrenom())) {
+				return false;
+			}
+			if (this.idUtilisateur!=u.idUtilisateur) {
+				return false;
+			}
+			
+			
+		}
+		return false;
+	}
+	
 	public int getNbEmpruntEnCours() {
 		return empruntEnCours.size();
 	}
