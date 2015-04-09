@@ -49,5 +49,56 @@ public class EmpruntArchive {
 	public void setEmprunteur(Utilisateur emprunteur) {
 		this.emprunteur = emprunteur;
 	}
+
+	@Override
+	public String toString() 
+	{
+		return "EmpruntArchive [dateRestitutionEff :" 	+ dateRestitutionEff
+							+ ", dateEmprunt() :" 		+ getDateEmprunt()
+							+ ", exemplaire() :" 		+ getExemplaire() 
+							+ ", emprunteur() :"		+ getEmprunteur() + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result
+				+ ((dateEmprunt == null) ? 0 : dateEmprunt.hashCode());
+		result = prime * result
+				+ ((emprunteur == null) ? 0 : emprunteur.hashCode());
+		result = prime * result
+				+ ((exemplaire == null) ? 0 : exemplaire.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		EmpruntArchive other = (EmpruntArchive) obj;
+		if (dateEmprunt == null) {
+			if (other.dateEmprunt != null)
+				return false;
+		} else if (!dateEmprunt.equals(other.dateEmprunt))
+			return false;
+		if (emprunteur == null) {
+			if (other.emprunteur != null)
+				return false;
+		} else if (!emprunteur.equals(other.emprunteur))
+			return false;
+		if (exemplaire == null) {
+			if (other.exemplaire != null)
+				return false;
+		} else if (!exemplaire.equals(other.exemplaire))
+			return false;
+		return true;
+	}
+	
+	
 	
 }
