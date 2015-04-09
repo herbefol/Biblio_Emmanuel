@@ -6,6 +6,7 @@ package biblio.metier.personnes;
 import java.util.ArrayList;
 import java.util.Date;
 
+import biblio.metier.BiblioException;
 import biblio.metier.ouvrages.EmpruntEnCours;
 
 /**
@@ -25,6 +26,7 @@ public class Utilisateur extends Personne
 		this.idUtilisateur = idUtilisateur;
 		this.pwd = pwd;
 		this.pseudonyme = pseudonyme;
+		this.empruntEnCours = new ArrayList<EmpruntEnCours>();
 	}
 	
 /*	public Utilisateur(int idUtilisateur, String pwd, String pseudonyme) 
@@ -128,19 +130,41 @@ public class Utilisateur extends Personne
 			if (this.idUtilisateur!=u.idUtilisateur) {
 				return false;
 			}
-			
-			
+			if (!this.pseudonyme.equals(u.pseudonyme)) {
+				return false;
+			}
+			return true;			
 		}
 		return false;
 	}
 	
+	public int hashCode() {
+		int hash = 3;
+		hash = hash * 5 + this.getNom().hashCode();
+		hash = hash * 7 + this.getPrenom().hashCode();
+		hash = hash * 11 + this.idUtilisateur;
+		hash = hash * 13 + this.pseudonyme.hashCode();
+		return hash;
+	}
+	
 	public int getNbEmpruntEnCours() {
+		if (this.empruntEnCours==null)
+			return 0;
 		return empruntEnCours.size();
 	}
 
-	public boolean isConditionsPretAcceptees(){
-		return true;
+	public boolean isConditionsPretAcceptees() throws BiblioException{
+		return false;
 	}
 	
+	public void addEmpruntEnCours(EmpruntEnCours emp) throws BiblioException {
+		if (this.isConditionsPretAcceptees()) {
+			this.empruntEnCours.add(emp);
+		}
+	}
+	
+	public void removeEmpruntEnCours(EmpruntEnCours emp) {
+		this.empruntEnCours.remove(emp);
+	}
 
 }
