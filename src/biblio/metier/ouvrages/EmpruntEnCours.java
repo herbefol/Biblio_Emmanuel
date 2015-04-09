@@ -2,9 +2,12 @@ package biblio.metier.ouvrages;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.Iterator;
 
 import biblio.metier.BiblioException;
 import biblio.metier.personnes.Utilisateur;
+import biblio.metier.personnes.Adherent;
 
 public class EmpruntEnCours {
 	
@@ -113,5 +116,25 @@ public class EmpruntEnCours {
 		exemplaire.setStatus(EnumStatusExemplaire.DISPONIBLE);
 		return new EmpruntArchive(dateRetour,this.dateEmprunt,this.exemplaire,this.emprunteur);
 	}
-
+	
+	public boolean isEnRetards()
+	{
+		int dureeMaxPrets = 15;
+		Iterator<EmpruntEnCours> it = this.getEmpruntEnCours().iterator();
+		while (it.hasNext()) 
+		{
+			EmpruntEnCours emp = it.next();
+			GregorianCalendar calendrier = new GregorianCalendar();
+			calendrier.add(GregorianCalendar.DAY_OF_YEAR, -(dureeMaxPrets+1));
+			Date prêt = calendrier.getTime();
+				if (prêt.after(emp.getDateEmprunt())) 
+				{
+					throw new BiblioException("Impossible d'ajouter un emprunt, cet adhérent a au moins un prêt en retard.");
+				}
+			return true;
+		}
+	}
 }
+
+			
+			
