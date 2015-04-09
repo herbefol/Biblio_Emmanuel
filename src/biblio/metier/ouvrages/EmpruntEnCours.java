@@ -3,6 +3,7 @@ package biblio.metier.ouvrages;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import biblio.metier.BiblioException;
 import biblio.metier.personnes.Utilisateur;
 
 public class EmpruntEnCours {
@@ -12,7 +13,7 @@ public class EmpruntEnCours {
 	private Utilisateur emprunteur;
 	public static SimpleDateFormat sdf=new SimpleDateFormat("dd-MM-yyyy");
 	
-	public EmpruntEnCours(Date dateEmprunt, Exemplaire exemplaire, Utilisateur emprunteur) 
+	public EmpruntEnCours(Date dateEmprunt, Exemplaire exemplaire, Utilisateur emprunteur) throws BiblioException 
 	{
 		this.dateEmprunt = dateEmprunt;
 		this.exemplaire = exemplaire;

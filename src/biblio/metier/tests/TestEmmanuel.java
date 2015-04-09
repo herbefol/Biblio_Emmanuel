@@ -15,7 +15,7 @@ import biblio.metier.personnes.Utilisateur;
 
 public class TestEmmanuel {
 	
-	public static void main(String[] args) throws ParseException {
+	public static void main(String[] args) throws ParseException, BiblioException {
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
