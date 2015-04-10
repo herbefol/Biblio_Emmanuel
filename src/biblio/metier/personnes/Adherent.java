@@ -99,7 +99,7 @@ public class Adherent extends Utilisateur
 	}
 	
 	public int getNbRetards() {
-		int nb = 0;
+		int nb = 0; //ArrayList<EmpruntEnCours> empruntEnRetard = new ArrayList<EmpruntEnCours>()
 		Iterator<EmpruntEnCours> it = this.getEmpruntEnCours().iterator();
 		while (it.hasNext()) {
 			EmpruntEnCours emp = it.next();
@@ -107,7 +107,7 @@ public class Adherent extends Utilisateur
 			calendrier.add(GregorianCalendar.DAY_OF_YEAR, -(dureeMaxPrets+1));
 			Date prêt = calendrier.getTime();
 			if (prêt.after(emp.getDateEmprunt())) {
-				nb++;
+				nb++; //empruntEnRetard.add(emp)
 			}
 		}
 		return nb;
