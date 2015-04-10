@@ -53,8 +53,8 @@ public class Adherent extends Utilisateur
 
 	@Override
 	public String toString() {
-		return "Adhérent[Nom:" + this.getNom() + ":Prénom:" + this.getPrenom() + ":idUtilisateur:"
-				+ this.getIdUtilisateur() + ":pseudonyme:" + this.getPseudonyme() + "]";
+		return "Adhérent[Nom : " + this.getNom() + ", Prénom : " + this.getPrenom() + ", idUtilisateur : "
+				+ this.getIdUtilisateur() + ", pseudonyme : " + this.getPseudonyme() + "]";
 	}
 	
 	@Override

@@ -142,9 +142,9 @@ public class Exemplaire
 	@Override
 	public String toString() 
 	{
-		return "Exemplaire [idExemplaire :" 		+ idExemplaire 
-							+ ", status :" 			+ status 
-							+ ", isbn :" 			+ isbn + "]";
+		return "Exemplaire [idExemplaire : " 		+ idExemplaire 
+							+ ", status : " 			+ status 
+							+ ", isbn : " 			+ isbn + "]";
 	}
 
 	@Override

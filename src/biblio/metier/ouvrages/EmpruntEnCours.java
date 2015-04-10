@@ -61,9 +61,9 @@ public class EmpruntEnCours {
 	@Override
 	public String toString() 
 	{
-		return "EmpruntEnCours \n[dateEmprunt :"		+ sdf.format(dateEmprunt)
-							+ "\n, exemplaire :" 		+ getExemplaire() 
-							+ "\n, emprunteur :"		+ getEmprunteur() + "]";
+		return "EmpruntEnCours \n[dateEmprunt : "		+ sdf.format(dateEmprunt)
+							+ "\nexemplaire : " 		+ getExemplaire() 
+							+ "\nemprunteur : "		+ getEmprunteur() + "]";
 	}
 
 	@Override

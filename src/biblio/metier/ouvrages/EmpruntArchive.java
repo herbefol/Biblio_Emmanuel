@@ -55,10 +55,10 @@ public class EmpruntArchive {
 	@Override
 	public String toString() 
 	{
-		return "EmpruntArchive \n[dateRestitutionEff :" 	+ sdf.format(dateRestitutionEff)
-							+ "\n, dateEmprunt() :" 		+ sdf.format(dateEmprunt)
-							+ "\n, exemplaire() :" 		+ getExemplaire() 
-							+ "\n, emprunteur() :"		+ getEmprunteur() + "]";
+		return "EmpruntArchive \n[dateRestitutionEff : " 	+ sdf.format(dateRestitutionEff)
+							+ "\ndateEmprunt() : " 		+ sdf.format(dateEmprunt)
+							+ "\nexemplaire() : " 		+ getExemplaire() 
+							+ "\nemprunteur() : "		+ getEmprunteur() + "]";
 	}
 
 	@Override
