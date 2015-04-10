@@ -117,23 +117,18 @@ public class EmpruntEnCours {
 		return new EmpruntArchive(dateRetour,this.dateEmprunt,this.exemplaire,this.emprunteur);
 	}
 	
-	public boolean isEnRetards()
+	/*public boolean isEnRetards() throws BiblioException
 	{
 		int dureeMaxPrets = 15;
-		Iterator<EmpruntEnCours> it = this.getEmpruntEnCours().iterator();
-		while (it.hasNext()) 
-		{
-			EmpruntEnCours emp = it.next();
 			GregorianCalendar calendrier = new GregorianCalendar();
 			calendrier.add(GregorianCalendar.DAY_OF_YEAR, -(dureeMaxPrets+1));
 			Date prêt = calendrier.getTime();
-				if (prêt.after(emp.getDateEmprunt())) 
+				if (prêt.after(this.dateEmprunt)) 
 				{
 					throw new BiblioException("Impossible d'ajouter un emprunt, cet adhérent a au moins un prêt en retard.");
 				}
 			return true;
-		}
-	}
+	}*/
 }
 
 			

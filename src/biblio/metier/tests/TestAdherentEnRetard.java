@@ -12,7 +12,7 @@ import biblio.metier.personnes.Utilisateur;
 public class TestAdherentEnRetard 
 {
 
-	public static void main(String[] args) throws BiblioException, ParseException 
+	public static void main(String[] args) throws ParseException 
 	{
 		SimpleDateFormat sdf=new SimpleDateFormat("dd-MM-yyyy");
 		
@@ -27,25 +27,26 @@ public class TestAdherentEnRetard
 		System.out.println("Adhérent :\n"+ad1);
 		EmpruntEnCours emp1=null;
 		EmpruntEnCours emp2=null;
-		EmpruntEnCours emp3=null;
 		
-		emp1 = new EmpruntEnCours(sdf.parse("07-04-2015"), ex1, ad1);
-		emp2 = new EmpruntEnCours(sdf.parse("27-04-2015"), ex2, ad1);
-		
+		try {
+			emp1 = new EmpruntEnCours(sdf.parse("07-04-2014"), ex1, ad1);
+		} catch (BiblioException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		System.out.println("Emprunt en cours 1\n"+emp1);
+
+		
+		try {
+			emp2 = new EmpruntEnCours(sdf.parse("27-04-2015"), ex2, ad1);
+		} catch (BiblioException e) {
+			System.out.println(e);;
+		}
+		
 		System.out.println();
 		System.out.println("Emprunt en cours 2\n"+emp2);
 		
-		//emp3 = new EmpruntEnCours(sdf.parse("07-04-2015"), ex3, ad1);
-		/*try {
-			emp1 = new EmpruntEnCours(sdf.parse("07/04/2015"), ex1, ad1);
-		} catch (BiblioException e) {
-			e.printStackTrace();
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}*/
-		
-		System.out.println("Emprunt en cours 2\n"+ad1.getNbEmpruntEnCours());
+		System.out.println("Nombre d'emprunt en cours 2\n"+ad1.getNbEmpruntEnCours());
 	}
 
 }
