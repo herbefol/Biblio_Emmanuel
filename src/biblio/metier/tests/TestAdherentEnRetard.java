@@ -39,12 +39,11 @@ public class TestAdherentEnRetard
 		EmpruntEnCours emp2=null;
 
 		System.out.println("Création d'un emprunt en cours avec une date en retard.");
-		System.out.println();
+	
 		
 		try {
 			emp1 = new EmpruntEnCours(sdf.parse("07-04-2014"), ex1, ad1);
 		} catch (BiblioException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		System.out.println();
@@ -65,6 +64,7 @@ public class TestAdherentEnRetard
 		
 		System.out.println("Emprunt en retard \n" + ((Adherent)ad1).getRetards()); 
 		System.out.println();
+		
 		System.out.println("Etat du deuxième emprunt en cours :\n"+emp2);
 		System.out.println();
 		
