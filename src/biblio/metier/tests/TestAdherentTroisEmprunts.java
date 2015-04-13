@@ -16,21 +16,41 @@ public class TestAdherentTroisEmprunts {
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		
+		System.out.println("----------------------------");
 		System.out.println("TEST ADHERENT TROIS EMPRUNTS");
 		System.out.println("----------------------------");
-		System.out.println();
+		System.out.println("\n");
 		
 		ExemplairesDao exdb = new ExemplairesDao();
 		Exemplaire ex1 = exdb.findByKey(1);
 		Exemplaire ex2 = exdb.findByKey(2);
 		Exemplaire ex3 = exdb.findByKey(3);
 		Exemplaire ex4 = exdb.findByKey(4);
-		System.out.println("Demande d'un exemplaire (id=1) aux Dao :\n"+ex1);
+		
+		System.out.println("\n--------------------------------------------");
+		System.out.println("Demande d'un exemplaire (id=1) aux Dao :");
+		System.out.println("--------------------------------------------");
 		System.out.println();
-		System.out.println("Demande d'un exemplaire (id=2) aux Dao :\n"+ex2);
+		
+		System.out.println(ex1);
 		System.out.println();
-		System.out.println("Demande d'un exemplaire (id=3) aux Dao :\n"+ex3);
+		
+		System.out.println("\n------------------------------------------------");
+		System.out.println("Demande d'un exemplaire (id=2) aux Dao :");
+		System.out.println("------------------------------------------------");
 		System.out.println();
+		
+		System.out.println(ex2);
+		System.out.println();
+		
+		System.out.println("\n------------------------------------------------");
+		System.out.println("Demande d'un exemplaire (id=3) aux Dao :");
+		System.out.println("------------------------------------------------");
+		System.out.println();
+		
+		System.out.println(ex3);
+		System.out.println();
+		
 		System.out.println("Demande d'un exemplaire (id=4) aux Dao :\n"+ex4);
 		System.out.println();
 
