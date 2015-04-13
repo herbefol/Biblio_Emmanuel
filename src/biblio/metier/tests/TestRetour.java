@@ -86,7 +86,7 @@ public class TestRetour {
 		EmpruntArchive ea1= null;
 		
 		try {
-			ea1 = emp1.retourExemplaire(sdf.parse("11/04/2015"));
+			ea1 = ex1.getEmpruntEnCours().retourExemplaire(sdf.parse("11/04/2015"));
 			emp1 = null;
 		} catch (ParseException e) {
 			e.printStackTrace();
