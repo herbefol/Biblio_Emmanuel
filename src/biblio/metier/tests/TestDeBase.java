@@ -20,24 +20,53 @@ public class TestDeBase {
 		Exemplaire ex1 = exdb.findByKey(1);
 		Exemplaire ex2 = exdb.findByKey(2);
 		
+		System.out.println("------------");
 		System.out.println("TEST DE BASE");
 		System.out.println("------------");
 		System.out.println();
-		System.out.println("Demande d'Exemplaire 1 (id=1) aux Dao :\n"+ex1);
+		
+		System.out.println("\n--------------------------------------------");
+		System.out.println("Demande d'Exemplaire 1 (id=1) aux Dao :");
+		System.out.println("--------------------------------------------");
 		System.out.println();
-		System.out.println("Demande d'Exemplaire 2 (id=2) aux Dao :\n"+ex2);
+		
+		System.out.println(ex1);
+		System.out.println();
+		
+		System.out.println("\n--------------------------------------------");
+		System.out.println("Demande d'Exemplaire 2 (id=2) aux Dao :");
+		System.out.println("--------------------------------------------");
+		System.out.println();
+		
+		System.out.println(ex2);
 		System.out.println();
 		
 		UtilisateursDao utdb = new UtilisateursDao();
 		Utilisateur ad1 = utdb.findByKey(123);
 		
-		System.out.println("Demande d'un adhérent (id=123) aux Dao :\n"+ad1);
+		System.out.println("\n--------------------------------------------");
+		System.out.println("Demande d'un adhérent (id=123) aux Dao :");
+		System.out.println("--------------------------------------------");
+		System.out.println();
+		
+		System.out.println(ad1);
 		System.out.println();
 		
 		Utilisateur em1 = utdb.findByKey(666);
-		System.out.println("Demande d'un employé (id=666) aux Dao :\n"+em1);
+		
+		System.out.println("\n--------------------------------------------");
+		System.out.println("Demande d'un employé (id=666) aux Dao :");
+		System.out.println("--------------------------------------------");
+		System.out.println();
+		
+		System.out.println(em1);
 		System.out.println();
 
+		System.out.println("\n------------------------------------------------------");
+		System.out.println("Création d'un emprunt en cours pour un adhérent :");
+		System.out.println("------------------------------------------------------");
+		System.out.println();
+		
 		EmpruntEnCours emp1=null;
 		
 		try {
@@ -48,9 +77,13 @@ public class TestDeBase {
 			e.printStackTrace();
 		}
 		
-		System.out.println("Création d'un emprunt en cours pour un adhérent :\n"+emp1);
+		System.out.println(emp1);
 		System.out.println();
 		
+		System.out.println("\n------------------------------------------------------");
+		System.out.println("Création d'un emprunt en cours pour un employé :");
+		System.out.println("------------------------------------------------------");
+		System.out.println();
 		
 		EmpruntEnCours emp2 = null;
 		
@@ -62,7 +95,8 @@ public class TestDeBase {
 			e.printStackTrace();
 		}
 		
-		System.out.println("Création d'un emprunt en cours pour un employé :\n"+emp2);
+		System.out.println(emp2);
+		System.out.println();
 	}
 
 }

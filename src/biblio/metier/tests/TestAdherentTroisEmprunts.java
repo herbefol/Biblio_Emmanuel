@@ -51,12 +51,23 @@ public class TestAdherentTroisEmprunts {
 		System.out.println(ex3);
 		System.out.println();
 		
-		System.out.println("Demande d'un exemplaire (id=4) aux Dao :\n"+ex4);
+		System.out.println("\n------------------------------------------------");
+		System.out.println("Demande d'un exemplaire (id=4) aux Dao :");
+		System.out.println("------------------------------------------------");
+		System.out.println();
+		
+		System.out.println(ex4);
 		System.out.println();
 
 		UtilisateursDao utdb = new UtilisateursDao();
 		Utilisateur ad1 = utdb.findByKey(123);
-		System.out.println("Demande d'un adhérent (id=123) aux Dao :\n"+ad1);
+		
+		System.out.println("\n------------------------------------------------");
+		System.out.println("Demande d'un adhérent (id=123) aux Dao :");
+		System.out.println("------------------------------------------------");
+		System.out.println();
+		
+		System.out.println(ad1);
 		System.out.println();
 
 		EmpruntEnCours emp1 = null;
@@ -65,17 +76,23 @@ public class TestAdherentTroisEmprunts {
 		EmpruntEnCours emp4 = null;
 				
 		try {
-			System.out.println("Création d'un emprunt en cours");
+			System.out.println("\n------------------------------------------------");
+			System.out.println("Création d'emprunt en cours");
+			System.out.println("------------------------------------------------");
 			System.out.println();
 			emp1 = new EmpruntEnCours(sdf.parse("07/04/2015"), ex1, ad1);
 			System.out.println("Emprunt en cours 1\n"+emp1);
 			System.out.println();
-			System.out.println("Création d'un emprunt en cours");
+			System.out.println("\n------------------------------------------------");
+			System.out.println("Création d'un deuxième emprunt en cours");
+			System.out.println("------------------------------------------------");
 			System.out.println();
 			emp2 = new EmpruntEnCours(sdf.parse("08/04/2015"), ex2, ad1);
 			System.out.println("Emprunt en cours 2\n"+emp2);
 			System.out.println();
-			System.out.println("Création d'un emprunt en cours");
+			System.out.println("\n------------------------------------------------");
+			System.out.println("Création d'un troisième emprunt en cours");
+			System.out.println("------------------------------------------------");
 			System.out.println();
 			emp3 = new EmpruntEnCours(sdf.parse("10/04/2015"), ex3, ad1);
 			System.out.println("Emprunt en cours 3\n"+emp3);
@@ -86,8 +103,9 @@ public class TestAdherentTroisEmprunts {
 			e.printStackTrace();
 		}
 		
-		
+		System.out.println("\n---------------------------------------------------");
 		System.out.println("Nombre d'emprunt en cours de l'adhérent : " + ad1.getNbEmpruntEnCours());
+		System.out.println("---------------------------------------------------");
 		System.out.println();
 		
 		System.out.println("Tentative de création d'un quatrième emprunt pour l'adhérent.");

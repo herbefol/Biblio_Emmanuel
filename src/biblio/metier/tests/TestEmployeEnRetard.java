@@ -16,6 +16,7 @@ public class TestEmployeEnRetard {
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		
+		System.out.println("----------------------");
 		System.out.println("TEST EMPLOYE EN RETARD");
 		System.out.println("----------------------");
 		System.out.println();
@@ -24,19 +25,40 @@ public class TestEmployeEnRetard {
 		ExemplairesDao exdb = new ExemplairesDao();
 		Exemplaire ex1 = exdb.findByKey(1);
 		Exemplaire ex2 = exdb.findByKey(2);
-		System.out.println("Demande d'un exemplaire (id=1) aux Dao :\n"+ex1);
+		
+		System.out.println("\n--------------------------------------------");
+		System.out.println("Demande d'un exemplaire (id=1) aux Dao :");
+		System.out.println("--------------------------------------------");
 		System.out.println();
-		System.out.println("Demande d'un exemplaire (id=2) aux Dao :\n"+ex2);
+		
+		System.out.println(ex1);
+		System.out.println();
+		
+		System.out.println("\n--------------------------------------------");
+		System.out.println("Demande d'un exemplaire (id=2) aux Dao :");
+		System.out.println("--------------------------------------------");
+		System.out.println();
+		
+		System.out.println(ex2);
 		System.out.println();
 		
 		UtilisateursDao utdb = new UtilisateursDao();
 		Utilisateur em1 = utdb.findByKey(666);
-		System.out.println("Demande d'un employé (id=666) aux Dao :\n"+em1);
+		
+		System.out.println("\n--------------------------------------------");
+		System.out.println("Demande d'un employé (id=666) aux Dao :");
+		System.out.println("--------------------------------------------");
 		System.out.println();
+		
+		System.out.println(em1);
+		System.out.println();
+		
 
 		EmpruntEnCours emp1=null;
 		
-		System.out.println("Création d'un emprunt en cours avec une date en retard.");
+		System.out.println("\n---------------------------------------------------------");
+		System.out.println("Création d'un emprunt en cours avec une date en retard");
+		System.out.println("---------------------------------------------------------");
 		System.out.println();
 
 		try {
@@ -46,14 +68,26 @@ public class TestEmployeEnRetard {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-
-		System.out.println("Emprunt en cours 1\n"+emp1);
+		
+		System.out.println("\n-----------------------------");
+		System.out.println("Emprunt en cours 1 :");
+		System.out.println("-----------------------------");
 		System.out.println();
 		
-		System.out.println("Tentative de création d'un deuxième emprunt en cours.");
+		System.out.println(emp1);
+		System.out.println();
+		
+		System.out.println("\n---------------------------------------------------------");
+		System.out.println("Tentative de création d'un deuxième emprunt en cours");
+		System.out.println("---------------------------------------------------------");
 		System.out.println();
 
 		EmpruntEnCours emp2 = null;
+		
+		System.out.println("\n-----------------------------");
+		System.out.println("Emprunt en cours 2 :");
+		System.out.println("-----------------------------");
+		System.out.println();
 		
 		try {
 			emp2 = new EmpruntEnCours(sdf.parse("10/04/2015"), ex2, em1);
@@ -63,9 +97,12 @@ public class TestEmployeEnRetard {
 			e.printStackTrace();
 		}
 		
-		System.out.println("Emprunt en cours 2\n"+ emp2);
+		System.out.println(emp2);
 		System.out.println();
-		System.out.println("Nombre d'emprunt en cours de l'employé :\n"+em1.getNbEmpruntEnCours());
+		
+		System.out.println("\n----------------------------------------------");
+		System.out.println("Nombre d'emprunt en cours de l'employé : "+em1.getNbEmpruntEnCours());
+		System.out.println("----------------------------------------------");
 
 	}
 
