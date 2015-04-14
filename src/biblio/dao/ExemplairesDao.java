@@ -5,6 +5,15 @@ import java.util.Date;
 import biblio.metier.ouvrages.EnumStatusExemplaire;
 import biblio.metier.ouvrages.Exemplaire;
 
+/**
+ * Cette classe est une classe DAO permettant la connexion à la base de données contenant
+ * les exemplaires de la bibliothèques. Elle permet de renvoyer un exemplaire à partir 
+ * de son id.
+ * Pour le moment, c'est un objet mock permettant de simuler la présence de la base de données.
+ * @author Emmanuel & Kevin
+ * @version 1.0
+ */
+
 public class ExemplairesDao {
 	
 	private static Exemplaire[] exemplaireDB = {

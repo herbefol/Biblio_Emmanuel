@@ -3,8 +3,10 @@ package biblio.metier.personnes;
 import java.util.Date;
 
 /**
+ * Cette classe est une généralisation de tous les types de personne que le système est susceptible
+ * de manipuler, aussi bien les différents types d'utilisateurs que les auteurs des ouvrages.
  * @author Kévin
- *
+ * @version 1.0
  */
 public class Personne 
 {

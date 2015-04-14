@@ -7,8 +7,11 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
+ * Cette classe regroupe les exemplaires stockés dans la bibliothèque. Chaque exemplaire possède
+ * son propre statut et pourra éventuellement être relié à un livre par la suite si le
+ * développement le requiert.
  * @author Ak.vin / ManuL
- *
+ * @version 1.0
  */
 public class Exemplaire 
 {

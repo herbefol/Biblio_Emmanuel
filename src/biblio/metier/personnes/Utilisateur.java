@@ -10,8 +10,12 @@ import biblio.metier.BiblioException;
 import biblio.metier.ouvrages.EmpruntEnCours;
 
 /**
+ * Cette classe est une généralisation de tous les types d'utilisateurs possibles du système.
+ * Elle inclut les éléments permettant l'identification de l'utilisateur.
+ * Normalement, elle ne doit pas être instancier en tant que telle, chaque utilisateur devant
+ * pouvoir être classé dans l'une de ses deux classes filles.
  * @author Ak.vin / ManuL
- *
+ * @version 1.0
  */
 public class Utilisateur extends Personne 
 {

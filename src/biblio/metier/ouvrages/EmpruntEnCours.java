@@ -10,8 +10,10 @@ import biblio.metier.personnes.Utilisateur;
 import biblio.metier.personnes.Adherent;
 
 /**
+ * Cette classe regroupe les emprunts actuellement en cours. Chaque emprunt est relié à
+ * l'exemplaire emprunté et à l'utilisateur concerné.
  * @author A.Kvin / ManuL
- *
+ * @version 1.0
  */
 public class EmpruntEnCours 
 {

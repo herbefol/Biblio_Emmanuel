@@ -12,8 +12,11 @@ import biblio.metier.BiblioException;
 import biblio.metier.ouvrages.EmpruntEnCours;
 
 /**
+ * Cette classe regroupe les adhérents de la bibliothèque, c'est à dire les utilisateurs qui ne
+ * font pas partie du personnel de la bibliothèque. Elle inclut des limitations sur les 
+ * possibilités d'emprunt de l'adhérent.
  * @author Ak.vin / ManuL
- *
+ * @version 1.0
  */
 public class Adherent extends Utilisateur
 {

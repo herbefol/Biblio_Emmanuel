@@ -7,6 +7,15 @@ import biblio.metier.personnes.Employe;
 import biblio.metier.personnes.EnumCategorieEmploye;
 import biblio.metier.personnes.Utilisateur;
 
+/**
+ * Cette classe est une classe DAO permettant de faire la connexion avec la base de données
+ * contenant tous les utilisateurs du système. Elle permet de renvoyer un utilisateur à partir
+ * de son id.
+ * C'est pour l'instant un objet mock simulant l'accès à la base de données.
+ * @author Emmanuel & Kevin
+ * @version 1.0
+ */
+
 public class UtilisateursDao {
 	
 	private static Utilisateur[] utilisateurDB = {

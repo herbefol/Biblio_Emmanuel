@@ -6,8 +6,11 @@ package biblio.metier.personnes;
 import java.util.Date;
 
 /**
+ * Cette classe  regroupe les trois catégories d'employés pouvant utiliser le système en tant
+ * que "professionnel" : Bibliothécaire, Gestionnaire de fonds et Responsable. Cette classe n'a 
+ * pas de limitation pour les emprunts.
  * @author Ak.vin / ManuL
- *
+ * @version 1.0
  */
 public class Employe extends Utilisateur
 {

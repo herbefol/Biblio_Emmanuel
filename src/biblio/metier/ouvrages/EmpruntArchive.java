@@ -6,8 +6,10 @@ import java.util.Date;
 import biblio.metier.personnes.Utilisateur;
 
 /**
+ * Cette classe regroupe les emprunts archivés, c'est à dire tous les emprunts rendus à la 
+ * bibliothèque. Ces emprunts sont conservés pour des besoins statistiques.
  * @author A.Kvin / ManuL
- *
+ * @version 1.0
  */
 public class EmpruntArchive {
 	
