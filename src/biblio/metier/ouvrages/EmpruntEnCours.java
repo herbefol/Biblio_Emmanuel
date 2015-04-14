@@ -9,13 +9,25 @@ import biblio.metier.BiblioException;
 import biblio.metier.personnes.Utilisateur;
 import biblio.metier.personnes.Adherent;
 
-public class EmpruntEnCours {
+/**
+ * @author A.Kvin / ManuL
+ *
+ */
+public class EmpruntEnCours 
+{
 	
 	private Date dateEmprunt;
 	private Exemplaire exemplaire;
 	private Utilisateur emprunteur;
 	public static SimpleDateFormat sdf=new SimpleDateFormat("dd-MM-yyyy");
 	
+	/**
+	 * Constructeur avec tous les paramètres.
+	 * @param dateEmprunt
+	 * @param exemplaire
+	 * @param emprunteur
+	 * @throws BiblioException
+	 */
 	public EmpruntEnCours(Date dateEmprunt, Exemplaire exemplaire, Utilisateur emprunteur) throws BiblioException 
 	{
 		this.dateEmprunt = dateEmprunt;
@@ -24,35 +36,54 @@ public class EmpruntEnCours {
 		emprunteur.addEmpruntEnCours(this);
 		exemplaire.setEmpruntEnCours(this);
 		exemplaire.setStatus(EnumStatusExemplaire.PRETE);
-	
 	}
 	
-	
+	/**Accesseur sur la date Emprunt
+	 * @return dateEmprunt La date emprunt d'un exemplaire.
+	 */
 	public Date getDateEmprunt() 
 	{
 		return dateEmprunt;
 	}
 	
+	/**Mutateur sur la date Emprunt
+	 * @return dateEmprunt La date emprunt d'un exemplaire.
+	 */
 	public void setDateEmprunt(Date dateEmprunt) 
 	{
 		this.dateEmprunt = dateEmprunt;
 	}
 	
+	/**Accesseur sur l'exemplaire.
+	 * @return exemplaire L'exemplaire.
+	 */
 	public Exemplaire getExemplaire() 
 	{
 		return exemplaire;
 	}
 	
+	/**
+	 * Mutateur sur l'exemplaire.
+	 * @param exemplaire L'exemplaire.
+	 */
 	public void setExemplaire(Exemplaire exemplaire) 
 	{
 		this.exemplaire = exemplaire;
 	}
 	
+	/**
+	 * Accesseur sur l'utilisateur qui emprunte.
+	 * @return emprunteur L'utilisateur qui emprunte.
+	 */
 	public Utilisateur getEmprunteur() 
 	{
 		return emprunteur;
 	}
 	
+	/**
+	 * Mutateur sur l'utilisateur qui emprunte.
+	 * @param emprunteur L'utilisateur qui emprunte.
+	 */
 	public void setEmprunteur(Utilisateur emprunteur) 
 	{
 		this.emprunteur = emprunteur;
@@ -109,6 +140,11 @@ public class EmpruntEnCours {
 		return true;
 	}
 
+	/**
+	 * Méthode retourExemplaire(dateRetour) pour gérer les retours et archivé le prêt.
+	 * @param dateRetour La date de retour de l'exemplaire.
+	 * @return EmpruntArchive l'archive de l'emprunt retourné.
+	 */
 	public EmpruntArchive retourExemplaire(Date dateRetour)
 	{
 		emprunteur.removeEmpruntEnCours(this);

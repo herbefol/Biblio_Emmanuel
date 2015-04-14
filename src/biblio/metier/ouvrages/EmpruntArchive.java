@@ -5,6 +5,10 @@ import java.util.Date;
 
 import biblio.metier.personnes.Utilisateur;
 
+/**
+ * @author A.Kvin / ManuL
+ *
+ */
 public class EmpruntArchive {
 	
 	private Date dateRestitutionEff;
@@ -13,6 +17,13 @@ public class EmpruntArchive {
 	private Utilisateur emprunteur;
 	public static SimpleDateFormat sdf=new SimpleDateFormat("dd-MM-yyyy");
 	
+	/**
+	 * Constructeur avec tous les paramètres.
+	 * @param dateRestitutionEff
+	 * @param dateEmprunt
+	 * @param exemplaire
+	 * @param emprunteur
+	 */
 	public EmpruntArchive(Date dateRestitutionEff, Date dateEmprunt, Exemplaire exemplaire, Utilisateur emprunteur) {
 		this.dateRestitutionEff = dateRestitutionEff;
 		this.dateEmprunt = dateEmprunt;
@@ -20,38 +31,71 @@ public class EmpruntArchive {
 		this.emprunteur = emprunteur;
 	}
 
+	/**
+	 * Accesseur sur la date de restitution de l'exemplaire.
+	 * @return dateRestutionEff La date de restitution de l'exemplaire.
+	 */
 	public Date getDateRestitutionEff() {
 		return dateRestitutionEff;
 	}
 
+	/**
+	 * Mutateur sur la date de restitution de l'exemplaire.
+	 * @param dateRestitutionEff la date de restitution effective de l'exemplaire.
+	 */
 	public void setDateRestitutionEff(Date dateRestitutionEff) {
 		this.dateRestitutionEff = dateRestitutionEff;
 	}
 
+	/**
+	 * Accesseur sur la date d'emprunt de l'exemplaire.
+	 * @return dateEmprunt La date d'emprunt de l'exemplaire.
+	 */
 	public Date getDateEmprunt() {
 		return dateEmprunt;
 	}
 
+	/**
+	 * Mutateur sur la date d'emprunt de l'exemplaire.
+	 * @param dateEmprunt La date d'emprunt de l'exemplaire.
+	 */
 	public void setDateEmprunt(Date dateEmprunt) {
 		this.dateEmprunt = dateEmprunt;
 	}
 
+	/**
+	 * Accesseur sur l'exemplaire.
+	 * @return exemplaire L'exemplaire.
+	 */
 	public Exemplaire getExemplaire() {
 		return exemplaire;
 	}
 
+	/**
+	 * Mutateur sur l'exemplaire.
+	 * @param exemplaire L'exemplaire.
+	 */
 	public void setExemplaire(Exemplaire exemplaire) {
 		this.exemplaire = exemplaire;
 	}
 
+	/**
+	 * Accesseur sur l'utilisateur qui emprunte l'exemplaire.
+	 * @return emprunteur L'utilisateur qui emprunte l'exemplaire.
+	 */
 	public Utilisateur getEmprunteur() {
 		return emprunteur;
 	}
 
+	/**
+	 * Mutateur sur l'utilisateur qui emprunte l'exemplaire.
+	 * @param emprunteur L'utilisateur qui emprunte l'exemplaire.
+	 */
 	public void setEmprunteur(Utilisateur emprunteur) {
 		this.emprunteur = emprunteur;
 	}
 
+	
 	@Override
 	public String toString() 
 	{
