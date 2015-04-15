@@ -16,7 +16,7 @@ public class TestRetour {
 	public static void main(String[] args) {
 		
 		System.out.println("\n------------------------------------------------------");
-		System.out.println("		   TESTRETOUR");
+		System.out.println("		   TEST RETOUR");
 		System.out.println("------------------------------------------------------");
 		System.out.println("\n");
 		
@@ -99,6 +99,8 @@ public class TestRetour {
 		
 		try {
 			ea1 = ex1.getEmpruntEnCours().retourExemplaire(sdf.parse("11/04/2015"));
+			emp1.setEmprunteur(null);
+			emp1.setExemplaire(null);
 			emp1 = null;
 		} catch (ParseException e) {
 			e.printStackTrace();
@@ -130,7 +132,7 @@ public class TestRetour {
 		System.out.println("\n");
 		
 		System.out.println("\n-------------------------------------------------------");
-		System.out.println("	L'EMPRUNT EN COURS EST GABAGE COLLECTE");
+		System.out.println("	L'EMPRUNT EN COURS EST GARBAGE COLLECTE");
 		System.out.println("-------------------------------------------------------");
 		System.out.println();
 		
@@ -138,5 +140,11 @@ public class TestRetour {
 		System.out.println("\nNombre d'emprunt en cours de l'adhérent : " + ad1.getNbEmpruntEnCours());
 		System.out.println("\n");
 		System.out.println("Emprunt en cours : "+emp1);	
+		
+		/*for (int i=0; i <= 50000; i++)
+		{
+			Utilisateur u = new Utilisateur(null,null,null,null,i,null,null);
+			System.out.println("boucle");
+		}*/
 	}
 }

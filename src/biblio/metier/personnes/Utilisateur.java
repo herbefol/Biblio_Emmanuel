@@ -205,5 +205,11 @@ public class Utilisateur extends Personne
 	{
 		this.empruntEnCours.remove(emp);
 	}
-
+	
+	@Override
+	protected void finalize() throws Throwable 
+	{
+		super.finalize();
+		System.out.println("ARRRRRRRGGG je suis garbage collecté");
+	}
 }

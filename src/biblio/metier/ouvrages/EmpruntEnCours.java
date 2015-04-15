@@ -167,6 +167,13 @@ public class EmpruntEnCours
 				}
 			return true;
 	}*/
+	
+	@Override
+	protected void finalize() throws Throwable 
+	{
+		super.finalize();
+		System.out.println("ARRRRRRRGGG je suis garbage collecté XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+	}
 }
 
 			
