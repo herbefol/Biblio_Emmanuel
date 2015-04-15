@@ -30,9 +30,9 @@ public class TestRetour {
 		System.out.println("-----------------------------------------------");
 		System.out.println();
 		
-		System.out.println("Exemplaire 1 :\n"+ex1);
+		System.out.println("idExemplaire " + ex1.getIdExemplaire() + " :\n"+ex1);
 		System.out.println("\n");
-		
+	
 		UtilisateursDao utdb = new UtilisateursDao();
 		Utilisateur ad1 = utdb.findByKey(123);
 		
@@ -41,9 +41,11 @@ public class TestRetour {
 		System.out.println("---------------------------------------");
 		System.out.println();
 		
-		System.out.println("Utilisateur 1 :\n"+ad1);
-		System.out.println("\n");
+		System.out.println("idUtilisateur " + ad1.getIdUtilisateur() + " :\n"+ad1);
+		System.out.println();
 		
+		System.out.println("Collection d'emprunt de l'adhérent avant la création :\n"+ad1.getEmpruntEnCours());
+		System.out.println("\n");
 		EmpruntEnCours emp1 = null;
 		
 		try {
@@ -59,13 +61,17 @@ public class TestRetour {
 		System.out.println("--------------------------------------------------------");
 		System.out.println();
 		
-		System.out.println("\n----------------------------------------------");
+		System.out.println("Collection d'emprunt de l'adhérent après la création : \n"+ad1.getEmpruntEnCours());
+		System.out.println("\nNombre d'emprunt en cours de l'adhérent : " + ad1.getNbEmpruntEnCours());
+		System.out.println("\n");
+		
+		System.out.println("\n\n----------------------------------------------");
 		System.out.println("	AFFICHAGE EMPRUNT EN COURS 1");
 		System.out.println("----------------------------------------------");
 		System.out.println();
 		
-		System.out.println("Emprunt en cours 1:\n"+emp1);
-		System.out.println("\n");
+		System.out.println("Emprunt en cours créé numéro 1 est : \n" + emp1);
+		System.out.println();
 		
 		System.out.println("\n----------------------------------------------");
 		System.out.println("	AFFICHAGE STATUT EXEMPLAIRE 1");
@@ -80,8 +86,14 @@ public class TestRetour {
 		System.out.println("----------------------------------------------");
 		System.out.println();
 		
-		System.out.println("Collection d'emprunt de l'utilisateur :\n"+ad1.getEmpruntEnCours());
+		System.out.println("Collection d'emprunt de l'adhérent :\n"+ad1.getEmpruntEnCours());
+		System.out.println("\nNombre d'emprunt en cours de l'adhérent : " + ad1.getNbEmpruntEnCours());
 		System.out.println("\n");
+		
+		System.out.println("\n-------------------------------------------");
+		System.out.println("	RETOUR DE L'EXEMPLAIRE");
+		System.out.println("-------------------------------------------");
+		System.out.println();
 		
 		EmpruntArchive ea1= null;
 		
@@ -92,12 +104,7 @@ public class TestRetour {
 			e.printStackTrace();
 		}
 		
-		System.out.println("\n-------------------------------------------");
-		System.out.println("	RETOUR DE L'EXEMPLAIRE");
-		System.out.println("-------------------------------------------");
-		System.out.println();
-		
-		System.out.println("\n------------------------------------------------");
+		System.out.println("\n\n------------------------------------------------");
 		System.out.println("	L'EXEMPLAIRE PASSE A dISPONIBLE");
 		System.out.println("------------------------------------------------");
 		System.out.println();
@@ -110,7 +117,7 @@ public class TestRetour {
 		System.out.println("----------------------------------------------------");
 		System.out.println();
 		
-		System.out.println("Collection d'emprunt de l'utilisateur :\n"+ad1.getEmpruntEnCours());
+		System.out.println("Collection d'emprunt de l'adhérent après retour : "+ad1.getEmpruntEnCours());
 		System.out.println("\n");
 		
 		System.out.println("\n----------------------------------------------");
@@ -126,6 +133,9 @@ public class TestRetour {
 		System.out.println("-------------------------------------------------------");
 		System.out.println();
 		
-		System.out.println("Emprunt en cours :\n"+emp1);	
+		System.out.println("Collection d'emprunt de l'adhérent après le retour : "+ad1.getEmpruntEnCours());
+		System.out.println("\nNombre d'emprunt en cours de l'adhérent : " + ad1.getNbEmpruntEnCours());
+		System.out.println("\n");
+		System.out.println("Emprunt en cours : "+emp1);	
 	}
 }

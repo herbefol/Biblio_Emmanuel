@@ -72,7 +72,7 @@ public class Adherent extends Utilisateur
 
 	/**
 	 * Mutateur sur le nombre max de prêts.
-	 * @return nbMaxPrets Le nombre max de prêts.
+	 * @param nbMaxPrets Le nombre max de prêts.
 	 */
 	public static void setNbMaxPrets(int nbMaxPrets) 
 	{
@@ -90,7 +90,7 @@ public class Adherent extends Utilisateur
 
 	/**
 	 * Mutateur sur la durée max d'un prêt.
-	 * @return dureeMaxPrets La durée macimum pour un prêt.
+	 * @param dureeMaxPrets La durée macimum pour un prêt.
 	 */
 	public static void setDureeMaxPrets(int dureeMaxPrets) 
 	{

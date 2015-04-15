@@ -49,7 +49,7 @@ public class EmpruntEnCours
 	}
 	
 	/**Mutateur sur la date Emprunt
-	 * @return dateEmprunt La date emprunt d'un exemplaire.
+	 * @param dateEmprunt La date emprunt d'un exemplaire.
 	 */
 	public void setDateEmprunt(Date dateEmprunt) 
 	{

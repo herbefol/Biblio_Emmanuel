@@ -116,7 +116,7 @@ public class Exemplaire
 	
 	/**
 	 * Mutateur sur le status de l'exemplaire.
-	 * @param status le status de l'exemplaire.
+	 * @param stat le status de l'exemplaire.
 	 */
 	// si le livre est emprunter alors il passe a PRETE
 	public void setStatus(EnumStatusExemplaire stat) 

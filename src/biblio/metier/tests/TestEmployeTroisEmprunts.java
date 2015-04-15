@@ -31,32 +31,36 @@ public class TestEmployeTroisEmprunts {
 		System.out.println("--------------------------------------------");
 		System.out.println();
 		
+		System.out.println("idExemplaire demandé : " + ex1.getIdExemplaire());
 		System.out.println(ex1);
-		System.out.println();
+		System.out.println("\n");
 		
 		System.out.println("\n--------------------------------------------");
 		System.out.println("Demande d'un exemplaire (id=2) aux Dao :");
 		System.out.println("\n--------------------------------------------");
 		System.out.println();
 		
+		System.out.println("idExemplaire demandé : " + ex2.getIdExemplaire());
 		System.out.println(ex2);
-		System.out.println();
+		System.out.println("\n");
 		
 		System.out.println("\n--------------------------------------------");
 		System.out.println("Demande d'un exemplaire (id=3) aux Dao :");
 		System.out.println("--------------------------------------------");
 		System.out.println();
 		
+		System.out.println("idExemplaire demandé : " + ex3.getIdExemplaire());
 		System.out.println(ex3);
-		System.out.println();
+		System.out.println("\n");
 		
 		System.out.println("\n--------------------------------------------");
 		System.out.println("Demande d'un exemplaire (id=4) aux Dao :");
 		System.out.println("--------------------------------------------");
 		System.out.println();
 		
+		System.out.println("idExemplaire demandé : " + ex4.getIdExemplaire());
 		System.out.println(ex4);
-		System.out.println();
+		System.out.println("\n");
 
 		UtilisateursDao utdb = new UtilisateursDao();
 		Utilisateur em1 = utdb.findByKey(666);
@@ -66,9 +70,10 @@ public class TestEmployeTroisEmprunts {
 		System.out.println("--------------------------------------------");
 		System.out.println();
 		
+		System.out.println("idEmployé demandé : " + em1.getIdUtilisateur());
 		System.out.println(em1);
 		System.out.println();
-
+		
 		EmpruntEnCours emp1 = null;
 		EmpruntEnCours emp2 = null;
 		EmpruntEnCours emp3 = null;
@@ -80,6 +85,10 @@ public class TestEmployeTroisEmprunts {
 			System.out.println("-----------------------------------");
 			System.out.println();
 			
+			System.out.println("Collection d'emprunt de l'employé avant la création : \n"+em1.getEmpruntEnCours());
+			System.out.println("\nNombre d'emprunt en cours de l'employé : " + em1.getNbEmpruntEnCours());
+			System.out.println();
+			
 			emp1 = new EmpruntEnCours(sdf.parse("07/04/2015"), ex1, em1);
 			
 			System.out.println("\n-----------------------------------");
@@ -87,7 +96,10 @@ public class TestEmployeTroisEmprunts {
 			System.out.println("-----------------------------------");
 			System.out.println();
 			
-			System.out.println(emp1);
+			System.out.println("Collection d'emprunt de l'employé après la création : \n"+em1.getEmpruntEnCours());
+			System.out.println("\nNombre d'emprunt en cours de l'employé : " + em1.getNbEmpruntEnCours());
+			System.out.println("\n");
+			System.out.println("Emprunt en cours créé numéro 1 est : \n" + emp1);
 			System.out.println();
 			
 			System.out.println("\n-----------------------------------");
@@ -102,7 +114,10 @@ public class TestEmployeTroisEmprunts {
 			System.out.println("-----------------------------------");
 			System.out.println();
 			
-			System.out.println(emp2);
+			System.out.println("Collection d'emprunt de l'employé après la création : \n"+em1.getEmpruntEnCours());
+			System.out.println("\nNombre d'emprunt en cours de l'employé : " + em1.getNbEmpruntEnCours());
+			System.out.println("\n");
+			System.out.println("Emprunt en cours créé numéro 2 est : \n" + emp2);
 			System.out.println();
 			
 			System.out.println("\n-----------------------------------");
@@ -111,12 +126,16 @@ public class TestEmployeTroisEmprunts {
 			System.out.println();
 			
 			emp3 = new EmpruntEnCours(sdf.parse("10/04/2015"), ex3, em1);
+			
 			System.out.println("\n-----------------------------------");
 			System.out.println("Emprunt en cours 3 :");
 			System.out.println("-----------------------------------");
 			System.out.println();
 			
-			System.out.println(emp3);
+			System.out.println("Collection d'emprunt de l'employé après la création : \n"+em1.getEmpruntEnCours());
+			System.out.println("\nNombre d'emprunt en cours de l'employé : " + em1.getNbEmpruntEnCours());
+			System.out.println("\n");
+			System.out.println("Emprunt en cours créé numéro 3 est : \n" + emp3);
 			System.out.println();
 			
 		} catch (BiblioException e) {
@@ -148,7 +167,10 @@ public class TestEmployeTroisEmprunts {
 		System.out.println("------------------------");
 		System.out.println();
 		
-		System.out.println(emp4);
+		System.out.println("Collection d'emprunt de l'employé après la création : \n"+em1.getEmpruntEnCours());
+		System.out.println("\nNombre d'emprunt en cours de l'employé : " + em1.getNbEmpruntEnCours());
+		System.out.println("\n");
+		System.out.println("Emprunt en cours créé numéro 4 est : \n" + emp4);
 		System.out.println();
 		
 		System.out.println("\n--------------------------------------------------");

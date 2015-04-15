@@ -30,6 +30,7 @@ public class TestDeBase {
 		System.out.println("--------------------------------------------");
 		System.out.println();
 		
+		System.out.println("idExemplaire demandé : " + ex1.getIdExemplaire());
 		System.out.println(ex1);
 		System.out.println();
 		
@@ -38,6 +39,7 @@ public class TestDeBase {
 		System.out.println("--------------------------------------------");
 		System.out.println();
 		
+		System.out.println("idExemplaire demandé : " + ex2.getIdExemplaire());
 		System.out.println(ex2);
 		System.out.println();
 		
@@ -49,6 +51,7 @@ public class TestDeBase {
 		System.out.println("--------------------------------------------");
 		System.out.println();
 		
+		System.out.println("idUtilisateur demandé : " + ad1.getIdUtilisateur());
 		System.out.println(ad1);
 		System.out.println();
 		
@@ -59,6 +62,7 @@ public class TestDeBase {
 		System.out.println("--------------------------------------------");
 		System.out.println();
 		
+		System.out.println("idEmployé demandé : " + em1.getIdUtilisateur());
 		System.out.println(em1);
 		System.out.println();
 
@@ -67,6 +71,7 @@ public class TestDeBase {
 		System.out.println("------------------------------------------------------");
 		System.out.println();
 		
+		System.out.println("Collection d'emprunt de l'adhérent avant la création : "+ad1.getEmpruntEnCours()+"\n");
 		EmpruntEnCours emp1=null;
 		
 		try {
@@ -77,7 +82,7 @@ public class TestDeBase {
 			e.printStackTrace();
 		}
 		
-		System.out.println(emp1);
+		System.out.println("Collection d'emprunt de l'adhérent après la création : \n"+emp1);
 		System.out.println();
 		
 		System.out.println("\n------------------------------------------------------");
@@ -85,6 +90,7 @@ public class TestDeBase {
 		System.out.println("------------------------------------------------------");
 		System.out.println();
 		
+		System.out.println("Collection d'emprunt de l'employé avant la création : "+em1.getEmpruntEnCours()+"\n");
 		EmpruntEnCours emp2 = null;
 		
 		try {
@@ -95,7 +101,7 @@ public class TestDeBase {
 			e.printStackTrace();
 		}
 		
-		System.out.println(emp2);
+		System.out.println("Collection d'emprunt de l'employé après la création : \n"+emp2);
 		System.out.println();
 	}
 

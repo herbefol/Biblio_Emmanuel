@@ -32,32 +32,36 @@ public class TestAdherentTroisEmprunts {
 		System.out.println("--------------------------------------------");
 		System.out.println();
 		
+		System.out.println("idExemplaire demandé : " + ex1.getIdExemplaire());
 		System.out.println(ex1);
-		System.out.println();
+		System.out.println("\n");
 		
 		System.out.println("\n------------------------------------------------");
 		System.out.println("Demande d'un exemplaire (id=2) aux Dao :");
 		System.out.println("------------------------------------------------");
 		System.out.println();
 		
+		System.out.println("idExemplaire demandé : " + ex2.getIdExemplaire());
 		System.out.println(ex2);
-		System.out.println();
+		System.out.println("\n");
 		
 		System.out.println("\n------------------------------------------------");
 		System.out.println("Demande d'un exemplaire (id=3) aux Dao :");
 		System.out.println("------------------------------------------------");
 		System.out.println();
 		
+		System.out.println("idExemplaire demandé : " + ex3.getIdExemplaire());
 		System.out.println(ex3);
-		System.out.println();
+		System.out.println("\n");
 		
 		System.out.println("\n------------------------------------------------");
 		System.out.println("Demande d'un exemplaire (id=4) aux Dao :");
 		System.out.println("------------------------------------------------");
 		System.out.println();
 		
+		System.out.println("idExemplaire demandé : " + ex4.getIdExemplaire());
 		System.out.println(ex4);
-		System.out.println();
+		System.out.println("\n");
 
 		UtilisateursDao utdb = new UtilisateursDao();
 		Utilisateur ad1 = utdb.findByKey(123);
@@ -67,8 +71,9 @@ public class TestAdherentTroisEmprunts {
 		System.out.println("------------------------------------------------");
 		System.out.println();
 		
+		System.out.println("idUtilisateur demandé : " + ad1.getIdUtilisateur());
 		System.out.println(ad1);
-		System.out.println();
+		System.out.println("\n");
 
 		EmpruntEnCours emp1 = null;
 		EmpruntEnCours emp2 = null;
@@ -80,26 +85,50 @@ public class TestAdherentTroisEmprunts {
 			System.out.println("Création d'emprunt en cours");
 			System.out.println("------------------------------------------------");
 			System.out.println();
+			
+			System.out.println("Collection d'emprunt de l'adhérent avant la création : "+ad1.getEmpruntEnCours()+"\n");
+			
 			emp1 = new EmpruntEnCours(sdf.parse("07/04/2015"), ex1, ad1);
-			System.out.println("Emprunt en cours 1\n"+emp1);
+			
+			System.out.println("Collection d'emprunt de l'adhérent après la création : \n"+ad1.getEmpruntEnCours());
+			System.out.println("\nNombre d'emprunt en cours de l'adhérent : " + ad1.getNbEmpruntEnCours());
+			System.out.println("\n");
+			System.out.println("Emprunt en cours créé numéro 1 est : \n" + emp1);
 			System.out.println();
+			
 			System.out.println("\n------------------------------------------------");
 			System.out.println("Création d'un deuxième emprunt en cours");
 			System.out.println("------------------------------------------------");
 			System.out.println();
+			
 			emp2 = new EmpruntEnCours(sdf.parse("08/04/2015"), ex2, ad1);
-			System.out.println("Emprunt en cours 2\n"+emp2);
+			
+			System.out.println("Collection d'emprunt de l'adhérent après la création : \n"+ad1.getEmpruntEnCours());
+			System.out.println("\nNombre d'emprunt en cours de l'adhérent : " + ad1.getNbEmpruntEnCours());
+			System.out.println("\n");
+			System.out.println("Emprunt en cours créé numéro 2 est : \n" + emp2);
 			System.out.println();
+			
 			System.out.println("\n------------------------------------------------");
 			System.out.println("Création d'un troisième emprunt en cours");
 			System.out.println("------------------------------------------------");
 			System.out.println();
+			
 			emp3 = new EmpruntEnCours(sdf.parse("10/04/2015"), ex3, ad1);
-			System.out.println("Emprunt en cours 3\n"+emp3);
+			
+			System.out.println("Collection d'emprunt de l'adhérent après la création : \n"+ad1.getEmpruntEnCours());
+			System.out.println("\nNombre d'emprunt en cours de l'adhérent : " + ad1.getNbEmpruntEnCours());
+			System.out.println("\n");
+			System.out.println("Emprunt en cours créé numéro 3 est : \n" + emp3);
 			System.out.println();
-		} catch (BiblioException e) {
+			
+		} 
+		catch (BiblioException e) 
+		{
 			e.printStackTrace();
-		} catch (ParseException e) {
+		} 
+		catch (ParseException e) 
+		{
 			e.printStackTrace();
 		}
 		
@@ -108,21 +137,29 @@ public class TestAdherentTroisEmprunts {
 		System.out.println("---------------------------------------------------");
 		System.out.println();
 		
+		System.out.println("\n---------------------------------------------------------------");
 		System.out.println("Tentative de création d'un quatrième emprunt pour l'adhérent.");
-		System.out.println();
-		try {
+		System.out.println("---------------------------------------------------------------");
+		System.out.println("\n");
+		try 
+		{
 			emp4 = new EmpruntEnCours(sdf.parse("10/04/2015"), ex4, ad1);
-		} catch (BiblioException e) {
+		} 
+		catch (BiblioException e) 
+		{
 			System.out.println(e);
-		} catch (ParseException e) {
+		} 
+		catch (ParseException e) 
+		{
 			e.printStackTrace();
 		}
-		
+		System.out.println("\nCollection d'emprunt de l'adhérent après la création : \n"+ad1.getEmpruntEnCours());
+		System.out.println("\nNombre d'emprunt en cours de l'adhérent : " + ad1.getNbEmpruntEnCours());
+		System.out.println("\n");
 		System.out.println("Etat du quatrième emprunt en cours :\n"+emp4);
 		System.out.println();
+		System.out.println("Emprunt en cours créé numéro 4 est : \n" + emp4);
+		System.out.println("\n");
 		System.out.println("Nombre d'emprunt en cours de l'adhérent : " + ad1.getNbEmpruntEnCours());
-		
-
 	}
-
 }

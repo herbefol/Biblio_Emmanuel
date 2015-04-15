@@ -19,7 +19,7 @@ public class TestEmployeEnRetard {
 		System.out.println("----------------------");
 		System.out.println("TEST EMPLOYE EN RETARD");
 		System.out.println("----------------------");
-		System.out.println();
+		System.out.println("\n");
 
 		
 		ExemplairesDao exdb = new ExemplairesDao();
@@ -31,16 +31,18 @@ public class TestEmployeEnRetard {
 		System.out.println("--------------------------------------------");
 		System.out.println();
 		
+		System.out.println("idExemplaire demandé : " + ex1.getIdExemplaire());
 		System.out.println(ex1);
-		System.out.println();
+		System.out.println("\n");
 		
 		System.out.println("\n--------------------------------------------");
 		System.out.println("Demande d'un exemplaire (id=2) aux Dao :");
 		System.out.println("--------------------------------------------");
 		System.out.println();
 		
+		System.out.println("idExemplaire demandé : " + ex2.getIdExemplaire());
 		System.out.println(ex2);
-		System.out.println();
+		System.out.println("\n");
 		
 		UtilisateursDao utdb = new UtilisateursDao();
 		Utilisateur em1 = utdb.findByKey(666);
@@ -50,8 +52,9 @@ public class TestEmployeEnRetard {
 		System.out.println("--------------------------------------------");
 		System.out.println();
 		
+		System.out.println("idEmployé demandé : " + em1.getIdUtilisateur());
 		System.out.println(em1);
-		System.out.println();
+		System.out.println("\n");
 		
 
 		EmpruntEnCours emp1=null;
@@ -61,6 +64,8 @@ public class TestEmployeEnRetard {
 		System.out.println("---------------------------------------------------------");
 		System.out.println();
 
+		System.out.println("Collection d'emprunt de l'employé avant la création : "+em1.getEmpruntEnCours()+"\n");
+		
 		try {
 			emp1 = new EmpruntEnCours(sdf.parse("25/03/2015"), ex1, em1);
 		} catch (BiblioException e) {
@@ -74,14 +79,18 @@ public class TestEmployeEnRetard {
 		System.out.println("-----------------------------");
 		System.out.println();
 		
-		System.out.println(emp1);
+		System.out.println("Collection d'emprunt de l'employé après la création : \n\n"+em1.getEmpruntEnCours());
+		System.out.println("\nNombre d'emprunt en cours de l'employé : " + em1.getNbEmpruntEnCours());
+		System.out.println("\nEmprunt en cours créé numéro 1 est : \n" + emp1);
 		System.out.println();
 		
 		System.out.println("\n---------------------------------------------------------");
 		System.out.println("Tentative de création d'un deuxième emprunt en cours");
 		System.out.println("---------------------------------------------------------");
 		System.out.println();
-
+		
+		System.out.println("Collection d'emprunt de l'employé avant la création : \n\n"+em1.getEmpruntEnCours()+"\n");
+		
 		EmpruntEnCours emp2 = null;
 		
 		System.out.println("\n-----------------------------");
@@ -97,7 +106,8 @@ public class TestEmployeEnRetard {
 			e.printStackTrace();
 		}
 		
-		System.out.println(emp2);
+		System.out.println("Collection d'emprunt de l'employé après la création : \n\n"+em1.getEmpruntEnCours());
+		System.out.println("\nEmprunt en cours créé numéro 2 est : \n" + emp2);
 		System.out.println();
 		
 		System.out.println("\n----------------------------------------------");

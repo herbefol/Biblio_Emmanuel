@@ -27,37 +27,42 @@ public class TestAdherentEnRetard
 		Exemplaire ex1 = exdb.findByKey(1);
 		Exemplaire ex2 = exdb.findByKey(2);
 		
-		System.out.println("------------------------------------------------");
+		System.out.println("\n------------------------------------------------");
 		System.out.println("Demande d'un exemplaire (id=1) aux Dao :");
 		System.out.println("------------------------------------------------");
 		System.out.println();
 		
+		System.out.println("idExemplaire demandé : " + ex1.getIdExemplaire());
 		System.out.println(ex1);
 		System.out.println("\n");
 		
-		System.out.println("------------------------------------------------");
+		System.out.println("\n------------------------------------------------");
 		System.out.println("Demande d'un exemplaire (id=2) aux Dao :");
 		System.out.println("------------------------------------------------");
 		System.out.println();
 		
+		System.out.println("idExemplaire demandé : " + ex2.getIdExemplaire());
 		System.out.println(ex2);
 		System.out.println("\n");
 		
 		UtilisateursDao utdb = new UtilisateursDao();
 		Utilisateur ad1 = utdb.findByKey(123);
 		
-		System.out.println("------------------------------------------------");
+		System.out.println("\n------------------------------------------------");
 		System.out.println("Demande d'un adhérent (id=123) aux Dao :");
 		System.out.println("------------------------------------------------");
 		System.out.println();
 		
+		System.out.println("idUtilisateur demandé : " + ad1.getIdUtilisateur());
 		System.out.println(ad1);
 		System.out.println("\n");
 
-		System.out.println("----------------------------------------------------------");
+		System.out.println("\n----------------------------------------------------------");
 		System.out.println("Création d'un emprunt en cours avec une date en retard.");
 		System.out.println("----------------------------------------------------------");
 		System.out.println();
+		
+		System.out.println("Collection d'emprunt de l'adhérent avant la création : "+ad1.getEmpruntEnCours()+"\n");
 		
 		EmpruntEnCours emp1=null;
 		EmpruntEnCours emp2=null;
@@ -68,15 +73,16 @@ public class TestAdherentEnRetard
 			e.printStackTrace();
 		}
 		
-		System.out.println("-------------------------------");
+		System.out.println("\n-------------------------------");
 		System.out.println("Emprunt en cours 1 :");
 		System.out.println("-------------------------------");
-		System.out.println();
+		System.out.println("\n");
 		
-		System.out.println(emp1);
+		System.out.println("Collection d'emprunt de l'adhérent après la création : \n"+ad1.getEmpruntEnCours());
+		System.out.println("\nNombre d'emprunt en cours de l'adhérent : " + ad1.getNbEmpruntEnCours());
 		System.out.println();
 
-		System.out.println("----------------------------------------------------------");
+		System.out.println("\n----------------------------------------------------------");
 		System.out.println("Tentative de création d'un deuxième emprunt en cours.");
 		System.out.println("----------------------------------------------------------");
 		System.out.println();
@@ -87,10 +93,12 @@ public class TestAdherentEnRetard
 			System.out.println(e);;
 		}
 		
+		System.out.println("\nNombre d'emprunt en cours de l'adhérent : " + ad1.getNbEmpruntEnCours());
+		
 		// l'adhérent est en vérité un utilisateur, il faut caster pour retrouver 
 		//les methodes adhérent dans adhérent tenu par ref d'utilisateur 
 		
-		System.out.println("----------------------");
+		System.out.println("\n----------------------");
 		System.out.println("Emprunt en retard :"); 
 		System.out.println("----------------------");
 		System.out.println();
@@ -98,22 +106,23 @@ public class TestAdherentEnRetard
 		System.out.println(((Adherent)ad1).getRetards());
 		System.out.println();
 	
-		System.out.println("---------------------------------------");
+		System.out.println("\n---------------------------------------");
 		System.out.println("Etat du deuxième emprunt en cours :");
 		System.out.println("---------------------------------------");
 		System.out.println();
 		
+		System.out.println("\nCollection d'emprunt de l'adhérent après la création : \n"+ad1.getEmpruntEnCours());
+		System.out.println("\n");
+		System.out.println("Etat du quatrième emprunt en cours :\n"+emp2);
+		System.out.println();
+		System.out.println("Emprunt en cours créé numéro 1 est : \n" + emp2);
+		System.out.println("\n");
+		System.out.println("Nombre d'emprunt en cours de l'adhérent : " + ad1.getNbEmpruntEnCours());
 		System.out.println(emp2);
 		System.out.println();
 		
+		System.out.println("\n--------------------------------------------");
+		System.out.println("Nombre d'emprunt en cours de l'adhérent : " + ad1.getNbEmpruntEnCours());
 		System.out.println("--------------------------------------------");
-		System.out.println("Nombre d'emprunt en cours de l'adhérent :");
-		System.out.println("--------------------------------------------");
-		System.out.println();	
-		
-		System.out.println(ad1.getNbEmpruntEnCours());
-		System.out.println();
-	
-	
 	}
 }
