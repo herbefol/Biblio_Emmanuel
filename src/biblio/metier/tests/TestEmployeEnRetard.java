@@ -65,6 +65,7 @@ public class TestEmployeEnRetard {
 		System.out.println();
 
 		System.out.println("Collection d'emprunt de l'employé avant la création : "+em1.getEmpruntEnCours()+"\n");
+		System.out.println("Nombre d'emprunt en cours de l'employé : " + em1.getNbEmpruntEnCours()+"\n");
 		
 		try {
 			emp1 = new EmpruntEnCours(sdf.parse("25/03/2015"), ex1, em1);
@@ -87,7 +88,7 @@ public class TestEmployeEnRetard {
 		System.out.println("\n---------------------------------------------------------");
 		System.out.println("Tentative de création d'un deuxième emprunt en cours");
 		System.out.println("---------------------------------------------------------");
-		System.out.println();
+		System.out.println("\n");
 		
 		System.out.println("Collection d'emprunt de l'employé avant la création : \n\n"+em1.getEmpruntEnCours()+"\n");
 		

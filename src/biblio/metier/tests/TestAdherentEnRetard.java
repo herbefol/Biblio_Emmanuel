@@ -63,6 +63,7 @@ public class TestAdherentEnRetard
 		System.out.println();
 		
 		System.out.println("Collection d'emprunt de l'adhérent avant la création : "+ad1.getEmpruntEnCours()+"\n");
+		System.out.println("Nombre d'emprunt en cours de l'adhérent : " + ad1.getNbEmpruntEnCours()+"\n");
 		
 		EmpruntEnCours emp1=null;
 		EmpruntEnCours emp2=null;
@@ -76,9 +77,10 @@ public class TestAdherentEnRetard
 		System.out.println("\n-------------------------------");
 		System.out.println("Emprunt en cours 1 :");
 		System.out.println("-------------------------------");
-		System.out.println("\n");
+		System.out.println();
 		
-		System.out.println("Collection d'emprunt de l'adhérent après la création : \n"+ad1.getEmpruntEnCours());
+		System.out.println(emp1);
+		System.out.println("\nCollection d'emprunt de l'adhérent après la création : \n"+ad1.getEmpruntEnCours());
 		System.out.println("\nNombre d'emprunt en cours de l'adhérent : " + ad1.getNbEmpruntEnCours());
 		System.out.println();
 
@@ -113,9 +115,9 @@ public class TestAdherentEnRetard
 		
 		System.out.println("\nCollection d'emprunt de l'adhérent après la création : \n"+ad1.getEmpruntEnCours());
 		System.out.println("\n");
-		System.out.println("Etat du quatrième emprunt en cours :\n"+emp2);
+		System.out.println("Etat du deuxième emprunt en cours :\n"+emp2);
 		System.out.println();
-		System.out.println("Emprunt en cours créé numéro 1 est : \n" + emp2);
+		System.out.println("Emprunt en cours créé numéro 2 est : \n" + emp2);
 		System.out.println("\n");
 		System.out.println("Nombre d'emprunt en cours de l'adhérent : " + ad1.getNbEmpruntEnCours());
 		System.out.println(emp2);

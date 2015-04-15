@@ -82,7 +82,9 @@ public class TestDeBase {
 			e.printStackTrace();
 		}
 		
-		System.out.println("Collection d'emprunt de l'adhérent après la création : \n"+emp1);
+		System.out.println("Collection d'emprunt de l'adhérent après la création : \n"+ad1.getEmpruntEnCours());
+		System.out.println("\nNombre d'emprunts en cours pour l'adhérent : " + ad1.getNbEmpruntEnCours());
+		
 		System.out.println();
 		
 		System.out.println("\n------------------------------------------------------");
@@ -101,7 +103,8 @@ public class TestDeBase {
 			e.printStackTrace();
 		}
 		
-		System.out.println("Collection d'emprunt de l'employé après la création : \n"+emp2);
+		System.out.println("Collection d'emprunt de l'employé après la création : \n"+em1.getEmpruntEnCours());
+		System.out.println("\nNombre d'emprunts en cours pour l'employé: " + em1.getNbEmpruntEnCours());
 		System.out.println();
 	}
 

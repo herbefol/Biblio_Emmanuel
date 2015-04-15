@@ -102,9 +102,9 @@ public class TestEmployeTroisEmprunts {
 			System.out.println("Emprunt en cours créé numéro 1 est : \n" + emp1);
 			System.out.println();
 			
-			System.out.println("\n-----------------------------------");
-			System.out.println("Création d'un emprunt en cours");
-			System.out.println("-----------------------------------");
+			System.out.println("\n-----------------------------------------");
+			System.out.println("Création d'un deuxième emprunt en cours");
+			System.out.println("-----------------------------------------");
 			System.out.println();
 			
 			emp2 = new EmpruntEnCours(sdf.parse("08/04/2015"), ex2, em1);
@@ -120,9 +120,9 @@ public class TestEmployeTroisEmprunts {
 			System.out.println("Emprunt en cours créé numéro 2 est : \n" + emp2);
 			System.out.println();
 			
-			System.out.println("\n-----------------------------------");
-			System.out.println("Création d'un emprunt en cours");
-			System.out.println("-----------------------------------");
+			System.out.println("\n-----------------------------------------");
+			System.out.println("Création d'un troisième emprunt en cours");
+			System.out.println("-----------------------------------------");
 			System.out.println();
 			
 			emp3 = new EmpruntEnCours(sdf.parse("10/04/2015"), ex3, em1);

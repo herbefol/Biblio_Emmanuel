@@ -87,6 +87,7 @@ public class TestAdherentTroisEmprunts {
 			System.out.println();
 			
 			System.out.println("Collection d'emprunt de l'adhérent avant la création : "+ad1.getEmpruntEnCours()+"\n");
+			System.out.println("Nombre d'emprunt en cours de l'adhérent : " + ad1.getNbEmpruntEnCours()+"\n");
 			
 			emp1 = new EmpruntEnCours(sdf.parse("07/04/2015"), ex1, ad1);
 			
@@ -160,6 +161,5 @@ public class TestAdherentTroisEmprunts {
 		System.out.println();
 		System.out.println("Emprunt en cours créé numéro 4 est : \n" + emp4);
 		System.out.println("\n");
-		System.out.println("Nombre d'emprunt en cours de l'adhérent : " + ad1.getNbEmpruntEnCours());
 	}
 }

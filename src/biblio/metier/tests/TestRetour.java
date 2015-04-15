@@ -45,7 +45,7 @@ public class TestRetour {
 		System.out.println();
 		
 		System.out.println("Collection d'emprunt de l'adhérent avant la création :\n"+ad1.getEmpruntEnCours());
-		System.out.println("\n");
+		System.out.println("\nNombre d'emprunt en cours de l'adhérent : " + ad1.getNbEmpruntEnCours()+"\n");
 		EmpruntEnCours emp1 = null;
 		
 		try {
@@ -118,6 +118,7 @@ public class TestRetour {
 		System.out.println();
 		
 		System.out.println("Collection d'emprunt de l'adhérent après retour : "+ad1.getEmpruntEnCours());
+		System.out.println("\nNombre d'emprunt en cours de l'adhérent : " + ad1.getNbEmpruntEnCours());
 		System.out.println("\n");
 		
 		System.out.println("\n----------------------------------------------");
